@@ -1,0 +1,441 @@
+<!doctype html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Agriculture</title>
+    <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}" >
+    <!-- fonts icons -->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
+    <!-- auto carousel-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+<body  style="background-color: #badcdf;">
+
+  <section class="nbdy">
+    <div class="navigation" >
+      <input type="checkbox" name="">
+      <span></span>
+      <span></span>
+      <u1 class="menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="/disease">Disease</a></li>
+        <li><a href="#">Map</a></li>
+        <li><a href="/help">Help</a></li>
+        <li><a href="#">ContactUs</a></li>
+  
+      </u1>
+    </div>
+  
+  </section>
+  <br><br><br>
+
+<div class="container"id="blur" style="    width: 1000px;">
+    <div class="box">
+        <div class="thumb">
+            <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active" data-interval="2500">
+                    <img src="{{ url_for('static',filename='images/spring.jpg') }}" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item" data-interval="2500">
+                    <img src="{{ url_for('static',filename='images/summer.jpg') }}" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="{{ url_for('static',filename='images/rain.jpg') }}" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="{{ url_for('static',filename='images/autumn.jpeg') }}" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="{{ url_for('static',filename='images/winter.jpeg') }}" class="d-block w-100" alt="...">
+                  </div>
+                
+                </div>
+           
+              </div>
+        </div>
+        <div class="details">
+            <div class="content">
+                <i class="fa fa-calendar-o" aria-hidden="true"></i>
+                <h3>Seasons</h3>
+                <a href="#" onclick="toggle()" >Enter Crop Season</a>
+            </div>
+
+        </div>
+    </div>
+    <div class="box">
+        <div class="thumb">
+            <!-- <img src="crp.jpg"> -->
+            
+            <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active" data-interval="2000">
+                    <img src="{{ url_for('static',filename='images/area.jpeg') }}" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item" data-interval="2000">
+                    <img src="{{ url_for('static',filename='images/area2.jpg') }}" class="d-block w-100" alt="...">
+                  </div>
+                  
+                </div>
+                
+              </div>
+        </div>
+
+        <div class="details">
+            <div class="content">
+                <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                <h3>Area</h3>
+                <a href="#"onclick="toggle2()" >Enter Area</a>
+            </div>
+
+        </div>
+    </div>
+    <div class="box">
+        <div class="thumb">
+            <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active" data-interval="3000">
+                    <img src="{{ url_for('static',filename='crp.jpg') }}" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item" data-interval="3000">
+                    <img src="{{ url_for('static',filename='crp2.jpg') }}" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item"data-interval="3000">
+                    <img src="{{ url_for('static',filename='crp3.jpeg') }}" class="d-block w-100" alt="...">
+                  </div>
+                </div>
+              
+              </div>
+            
+        </div>
+        <div class="details">
+            <div class="content">
+              <i class="fa fa-envira" aria-hidden="true"></i>
+              <h3>Crop</h3>
+                <a href="#"onclick="toggle3()" >Specify Crop Type</a>
+            </div>
+
+        </div>
+    </div>
+    <div class="box">
+        <div class="thumb">
+            <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active" data-interval="3500">
+                    <img src="{{ url_for('static',filename='images/loc.png') }}" class="d-block w-100" alt="...">
+                  </div>
+                 
+                </div>
+                
+              </div>        </div>
+        <div class="details">
+            <div class="content">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <h3>Location</h3>
+                <a href="#"onclick="toggle4()" >Your Location</a>
+            </div>
+
+        </div>
+    </div>
+    
+</div>
+
+<!-- <div class="baton"  onclick="apiCall()">
+  <a style="color: #fff;text-decoration: none;" href="#">Check Productivity</a>
+  </div> -->
+
+
+<div id="popup1">
+        <div class="container1 pbdy">
+	    	<span class="en">English</span>
+	    	<input type="checkbox" class="check">
+	    	<span class="hn">हिंदी</span>
+	    	<div class="content1 contentEnglish">
+	    	<!-- <h2>English</h2> -->
+        <p>Please specify your harvest season</p>
+        <center><a href="#" onclick="toggle(0)">Autumn</a>
+          <a href="#" onclick="toggle(1)" value="KHARIF">Kharif</a>
+          <a href="#" onclick="toggle(2)" value="RABI">Rabi</a>
+          <a href="#" onclick="toggle(3)" value="SUMMER">Summer</a>
+          <a href="#" onclick="toggle(5)" value="WHOLE YEAR">Whole Year</a>
+          <a href="#" onclick="toggle(6)" value="WINTER">Winter</a></center>
+	    	</div>
+		    <div class="content1 contentHindi">
+			    <!-- <h2>हिंदी</h2> -->
+          <p>कृपया अपनी फसल का मौसम निर्दिष्ट करें</p>
+          <center><a href="#" onclick="toggle()">पतझड़</a>
+            <a href="#" onclick="toggle()" value="KHARIF">खरीफ</a>
+            <a href="#" onclick="toggle()" value="RABI">रबी</a>
+            <a href="#" onclick="toggle()" value="SUMMER">गर्मी</a><br>
+            <a href="#" onclick="toggle()" value="WHOLE YEAR">पूरा साल</a>
+            <a href="#" onclick="toggle()" value="WINTER">सर्दी</a></center>
+
+			  </div>
+	      </div>
+  
+</div>
+<div id="popup2">
+  <div class="container1 pbdy">
+    <span class="en">English</span>
+    <input type="checkbox" class="check">
+    <span class="hn">हिंदी</span>
+    <div class="content1 contentEnglish">
+    <!-- <h2>English</h2> -->
+    <p>Please specify the area of crop feild</p>
+    <input type="text" required id="are" />
+    <a href="#" onclick="toggle2()">Confirm</a>
+
+    </div>
+    <div class="content1 contentHindi">
+      <!-- <h2>हिंदी</h2> -->
+      <p>कृपया अपनी फसल का क्षेत्र निर्दिष्ट करें</p>
+      <a href="#" onclick="toggle2()">पुष्टि करें</a>
+
+    </div>
+    </div>
+</div>
+<div id="popup3">
+  <!-- <div class="container1 pbdy">
+    <span class="en">English</span>
+    <input type="checkbox" class="check">
+    <span class="hn">हिंदी</span>
+    <div class="content1 contentEnglish">
+    
+    <p>Please enter the type of crop you harvest</p>
+    <a href="#" onclick="toggle3()">Confirm</a>
+
+    </div>
+    <div class="content1 contentHindi">
+      
+      <p>कृपया अपनी फसल का प्रकार दर्ज करें</p>
+      <a href="#" onclick="toggle3()">पुष्टि करें</a>
+
+    </div>
+    </div> -->
+    <div class="container1 pbdy">
+      <span class="en">English</span>
+      <input type="checkbox" class="check">
+      <span class="hn">हिंदी</span>
+      
+      <div class="content1 contentEnglish">
+      <!-- <h2>English</h2> -->
+      <p>Please enter the type of crop you harvest</p>
+      
+      <!-- <a href="#" onclick="toggle3()">Confirm</a> -->
+  
+      </div>
+      <div class="content1 contentHindi">
+        <!-- <h2>हिंदी</h2> -->
+        <p>कृपया अपनी फसल का प्रकार दर्ज करें</p>
+        <!-- <a href="#" onclick="toggle3()">पुष्टि करें</a> -->
+  
+      </div>
+      <select id='selUser' style='width: 200px;'>
+        <option value='0'>Select User</option> 
+        <option value='1'>ARHAR (TUR)</option> 
+        <option value='2'>BAJRA</option> 
+        <option value='3'>BANANA</option> 
+        <option value='4'>BARLEY</option> 
+        <option value='5'>CASTOR SEED</option> 
+        <option value='6'>CORIANDER</option> 
+        <option value='7'>DRY CHILLIES</option> 
+        <option value='8'>DRY GINGER</option> 
+        <option value='9'>GARLIC</option> 
+        <option value='10'>GRAM</option> 
+        <option value='11'>GROUNDNUT</option> 
+        <option value='12'>HORSEGRAM</option> 
+        <option value='13'>JOWAR</option> 
+        <option value='14'>JUTE</option> 
+        <option value='15'>KESARI</option> 
+        <option value='16'>LINSEED</option> 
+        <option value='17'>MAIZE</option> 
+        <option value='18'>MASOOR</option> 
+        <option value='19'>MESTA</option> 
+        <option value='20'>MOONG</option> 
+        <option value='21'>ONION</option> 
+        <option value='22'>OTHER KHARIF PULSES</option> 
+        <option value='23'>OTHER RABI PULSES</option> 
+        <option value='24'>PEAS & BEANS (PULSES)</option> 
+        <option value='25'>POTATO</option> 
+        <option value='26'>RAGI</option> 
+        <option value='27'>RAPESEED &MUSTARD</option> 
+        <option value='28'>RICE</option> 
+        <option value='29'>SAFFLOWER</option> 
+        <option value='30'>SANNHAMP</option> 
+        <option value='31'>SESAMUM</option> 
+        <option value='32'>SMALL MILLETS</option> 
+        <option value='33'>SUGARCANE</option> 
+        <option value='34'>SUNFLOWER</option> 
+        <option value='35'>SWEET POTATO</option> 
+        <option value='36'>TOBACCO</option> 
+        <option value='37'>TURMERIC</option> 
+        <option value='38'>URAD</option> 
+        <option value='39'>WHEAT</option> 
+        
+        </select>
+        
+        <input type='button' value='Seleted option' onclick="toggle3()" class = "aaa" id='but_read'>
+        
+        <div id='result'></div>
+      </div>
+</div>
+<div id="popup4">
+  <div class="container1 pbdy">
+    <span class="en">English</span>
+    <input type="checkbox" class="check">
+    <span class="hn">हिंदी</span>
+    <div class="content1 contentEnglish">
+    <!-- <h2>English</h2> -->
+    <p>Please enter the location of your land</p>
+    
+    
+
+    </div>
+    <div class="content1 contentHindi">
+      <!-- <h2>हिंदी</h2> -->
+      <p>कृपया अपनी भूमि का स्थान दर्ज करें</p>
+      <a href="#" onclick="toggle4()">पुष्टि करें</a>
+    </div>
+    <!-- ['Araria', 'Arhasia', 'Arval', 'Aurangabad', 'Banka', 'Begusarai',
+       'Bhagalpur', 'Bhanka', 'Bhojpur', 'Buxar', 'Darbhanga', 'Devghar',
+       'Dumka', 'Gadhwa', 'Gaya', 'Giridih', 'Godda', 'Gopalganj',
+       'Gumala', 'Hazaribagh', 'Jamui', 'Jehanabad', 'Kaimur (Bhabua)',
+       'Katihar', 'Khagaria', 'Kishanganj', 'Lakhisarai', 'Lohardanga',
+       'Madhepura', 'Madhubani', 'Munger', 'Muzaffarpur', 'Nalanda',
+       'Nawada', 'Palamau', 'Pashchim Champaran', 'Patna',
+       'Purba Champaran', 'Purnia', 'Ranchi', 'Rohtas', 'Saharsa',
+       'Sahebganj', 'Samastipur', 'Saran', 'Sheikhpura', 'Sheohar',
+       'Singhbhum', 'Singhbhur(west)', 'Sitamarhi', 'Siwan', 'Sumal',
+       'Supaul', 'Vaishali', 'Zamui'] -->
+    <select id='seland' style='width: 200px;'>
+      <option value='0'>Araria</option> 
+      <option value='1'>Arhasia</option> 
+      <option value='2'>Arval</option> 
+      <option value='3'>Aurangabad'</option> 
+      <option value='4'>Banka</option> 
+      <option value='5'>Begusarai</option> 
+      <option value='6'>Bhagalpur</option> 
+      <option value='7'>Bhanka</option> 
+      <option value='8'>Bhojpur</option> 
+      <option value='9'>Buxar</option> 
+      <option value='10'>Darbhanga</option> 
+      <option value='11'>Devghar</option> 
+      <option value='12'>Dumka</option> 
+      <option value='13'>Gadhwa</option> 
+      <option value='14'>Gaya</option> 
+      <option value='15'>Giridih'</option> 
+      <option value='16'>Godda</option> 
+      <option value='17'>Gopalganj</option> 
+      <option value='18'>Gumala</option> 
+      <option value='19'>Hazaribagh</option> 
+      <option value='20'>Jamui</option> 
+      <option value='21'>ONION</option> 
+      <option value='22'>OTHER KHARIF PULSES</option> 
+      <option value='23'>OTHER RABI PULSES</option> 
+      <option value='24'>PEAS & BEANS (PULSES)</option> 
+      <option value='25'>POTATO</option> 
+      <option value='26'>RAGI</option> 
+      <option value='27'>RAPESEED &MUSTARD</option> 
+      <option value='28'>RICE</option> 
+      <option value='29'>SAFFLOWER</option> 
+      <option value='30'>SANNHAMP</option> 
+      <option value='31'>SESAMUM</option> 
+      <option value='32'>SMALL MILLETS</option> 
+      <option value='33'>SUGARCANE</option> 
+      <option value='34'>SUNFLOWER</option> 
+      <option value='35'>SWEET POTATO</option> 
+      <option value='36'>TOBACCO</option> 
+      <option value='37'>TURMERIC</option> 
+      <option value='38'>URAD</option> 
+      <option value='39'>WHEAT</option> 
+      
+      </select>
+      <a href="#" onclick="toggle4()">Confirm</a>
+    </div>
+</div>
+
+<form action="{{url_for('predict')}}" method="post">
+  <input type="text" name="DISTRICT" placeholder="DISTRICT" id="dist"value="0" hidden required="required" />
+    <input type="text" name="YEAR" placeholder="YEAR" id="yea"value="2007" hidden required="required" />
+<input type="text" name="CROP" placeholder="CROP" value="9" hidden id="crop"required="required" />
+<input type="text" name="AREA" placeholder="AREA" value="1216" id="area" hidden required="required" />
+<input type="text" name="SEASON" placeholder="SEASON" value="2" id="seas" hidden required="required" />
+
+
+    <button type="submit" style="position:absolute; top:90%; left:45%; min-width:150px; border-radius: 10%; background-color: purple;" >Predict Yield</button>
+</form>
+
+<!-- class="btn btn-primary btn-block" -->
+<br>
+<br>
+
+
+<script type="text/javascript">
+    
+    const yea = new Date();
+
+    document.getElementById('yea').value = yea.getFullYear()
+
+    function toggle(val)
+    {
+      var blur = document.getElementById('blur');
+      blur.classList.toggle('active');
+      var pop = document.getElementById('popup1');
+      pop.classList.toggle('active');
+      document.getElementById("seas").value = val
+    }
+    function toggle2()
+    {
+      var blur = document.getElementById('blur');
+      blur.classList.toggle('active');
+      var pop = document.getElementById('popup2');
+      pop.classList.toggle('active');
+      document.getElementById('area').value = document.getElementById('are').value
+    }
+    function toggle3()
+    {
+      var blur = document.getElementById('blur');
+      blur.classList.toggle('active');
+      var pop = document.getElementById('popup3');
+      pop.classList.toggle('active');
+      selectElement =  document.querySelector('#selUser'); 
+      output = selectElement.value; 
+      console.log(output)
+      document.getElementById("crop").value = output
+    }
+    function toggle4()
+    {
+      var blur = document.getElementById('blur');
+      blur.classList.toggle('active');
+      var pop = document.getElementById('popup4');
+      pop.classList.toggle('active');
+      selectElement =  document.querySelector('#seland'); 
+      output = selectElement.value; 
+      console.log(output)
+      document.getElementById("dist").value = output
+      
+    }
+    function toggle5()
+    {
+      var blur = document.getElementById('blur');
+      blur.classList.toggle('active');
+      var pop = document.getElementById('popup4');
+      pop.classList.toggle('active');
+    }
+    // function val_pred()
+    // {
+
+    // }
+</script>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src='select2.min.js' type='text/javascript'></script>
+
+</body>
+    </html>

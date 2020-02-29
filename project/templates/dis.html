@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Crop Diseaes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
+  <script  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+
+<style>
+body
+{
+    background: rgb(111, 178, 236);
+    color: white;
+}
+.btn {
+    
+  background-color: #fff;
+  border: none;
+  color: black;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 20px;
+  margin: 4px 2px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #e02108;
+  color: white;
+}
+.phbdy
+{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+.card
+{
+    position: absolute;
+    top:50%;
+    left:50%;
+    border-radius: 10%;
+    transform: translate(-50%,-50%);
+    width: 400px;
+    height: 400px;
+
+}
+.card .frnt
+{
+    width: 100%;
+    height:100%;
+    background: #32EA79;
+    padding: 30px;
+    box-sizing: border-box;
+    transition: 0.5s;
+    transform-origin: rigth;
+}
+.card .frnt h2
+{
+    font-weight: bold;
+    width: 50%;
+    text-align: left;
+    float: left;
+}
+.turn
+{
+    width: 50%;
+    text-align: right;
+    cursor: pointer;
+    float: right;
+    font-size: 24px;
+    color: #fff;
+    display: block;
+
+}
+.upl
+{
+    padding: 50px 0 20px;
+    text-align: center;
+    
+}
+.upl .fa
+{
+    margin-top: 15%;
+    font-size: 100px;
+    color: #fff;
+}
+.card .back
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgb(224, 32, 106);
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    box-sizing: border-box;
+    transform-origin: left;
+    transition: 0.5s;
+    transform: translateX(100%) rotateY(90deg);
+}
+.card .back.active
+{
+    transform: translateX(0) rotateY(0);
+
+}
+.card.frnt.active
+{
+    transform: translateX(0) rotateY(0);
+
+}
+
+.card.frnt
+{
+    transform: translateX(-100%) rotateY(90deg);
+
+}
+
+.bck
+{
+    font-size: 24px;
+    text-align: right;
+}
+.bck {
+    cursor: pointer;
+}
+
+/* navigation bar*/
+.nbdy 
+    {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        /* align-items: center; */
+        min-height: 10vh;
+        /* background: linear-gradient(#fff 0%,#fff 50%,#42a8f9 50%,#42a8f9 100%); */
+        background: rgb(111, 178, 236);
+    }
+    
+    .navigation
+    {
+        height: 25px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #fff;
+        padding: 20px;
+        transition: 0.5s;
+        border-radius: 4px;
+        overflow: hidden;
+        box-shadow: 0 8px 15px rgba(0,0,0,0.5);
+    }
+    
+    .menu
+    {
+        margin: 0;
+        padding: 0;
+        width:0;
+        overflow:hidden;
+        display:flex;
+        transition:0.5s;
+    }
+.navigation input:checked ~ .menu
+{
+    width:400px;
+}
+
+
+.menu li
+{
+    list-style: none;
+    margin: 0 10px;
+    
+}
+
+.menu li a
+{
+    text-decoration:none;
+    color: #666;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: 0.5s;
+}
+.menu li a:hover
+{
+    color:#42a8f9;
+}
+
+.navigation input{
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.navigation span
+{
+    position: absolute;
+    left: 26px;
+    width: 32px;
+    height: 4px;
+    background: #666;
+    pointer-events:none;
+    transition: 0.5s;
+}
+.navigation input:checked ~ span
+{
+    background: #f974a1;
+}
+.navigation span:nth-child(2)
+{
+    transform: translateY(-8px);
+}
+.navigation input:checked ~ span:nth-child(2)
+{
+    transform: translateY(0) rotate(45deg);
+}
+.navigation span:nth-child(3)
+{
+    transform: translateY(8px);
+}
+
+.navigation input:checked ~ span:nth-child(3)
+{
+    transform: translateY(0) rotate(-45deg);
+}
+
+</style>
+ 
+      </head>
+<body>
+
+    <section class="nbdy">
+		<div class="navigation" >
+			<input type="checkbox" name="">
+			<span></span>
+			<span></span>
+			<u1 class="menu">
+				<li><a href="/home">Home</a></li>
+				<li><a href="#">Disease</a></li>
+				<li><a href="#">Map</a></li>
+				<li><a href="/help">Help</a></li>
+				<li><a href="#">ContactUs</a></li>
+
+			</u1>
+		</div>
+	
+	
+  </section>
+<section class="phbdy">
+    <div class="card">
+        <div class="frnt active">
+            <h2>Upload image</h2>
+            <i class="fa fa-chevron-right turn" aria-hidden="true"></i><br>
+            <div class="upl  "><i class="fa fa-upload  animated  fadeInUp" aria-hidden="true"></i><br><br>
+                <form id="upload-form" action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
+                    <input id="file-picker" type="file" name="file" accept="image/*" hidden onchange="this.form.submit()">
+                    <label for="file-picker" class="btn btn-lg btn-success">Select file</label>
+                 </form>
+        </div>
+        <div class="back">
+            <i class="fa fa-chevron-left bck" aria-hidden="true"></i>
+            {% if k %}
+            <h1>{{ k.text }}</h1>
+            <!-- <p>{{ k.info }}</p> -->
+
+            {% else %}
+            <p></p>
+            {% endif %}
+            
+            <!-- Disease in crops is a very dangerous problem it can destroy you entire crop. But if a disease is known before hand it can be cured and your crop can be saved. Upload your image below to know about a disease in the crop and get to know how you can cure it. -->
+        </div>
+    </div>
+</section>
+<script type="text/javascript">
+
+    $(document).ready(function(){
+        $('.turn').click(function(){
+            $('.back').addClass('active')
+            $('.frnt').removeClass('active')
+        })
+        $('.bck').click(function(){
+            $('.back').removeClass('active')
+            $('frnt').addClass('active')
+        })
+    })
+
+</script>
+</body>
+</html>

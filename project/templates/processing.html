@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <title>DISEASE PREDICTION</title>
+ 
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+ 
+    <link href="../static/jumbotron-narrow.css" rel="stylesheet">
+
+    <link href="../static/style.css" rel="stylesheet">
+ 
+ 
+</head>
+ 
+<body>
+ 
+    <div class="container">
+        <div class="header">
+
+            <h3 class="text-muted">{{ k.text }} </h3>
+        </div>
+ 
+        <div class="jumbotron">
+		 <div id="image-container">
+            <img src=" {{url_for('send_image', filename=k.image_name)}} " style="max-width: 560px;">
+            </div>
+          </div>
+ 
+          <h2 style="margin-top: 90%;">{{ k.text }}</h2>
+ 
+        </div>
+
+</body>
+ 
+</html>
+

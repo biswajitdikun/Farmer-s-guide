@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Agriculture</title>
+    <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}" >
+    <!-- fonts icons -->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
+    <!-- auto carousel-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    </head>
+    <body>
+        <body  style="background-color: #badcdf;">
+
+            <section class="nbdy">
+              <div class="navigation" >
+                <input type="checkbox" name="">
+                <span></span>
+                <span></span>
+                <u1 class="menu">
+                  <li><a href="/home">Home</a></li>
+                  <li><a href="/upload">Disease</a></li>
+                  <li><a href="#">Map</a></li>
+                  <li><a href="/help">Help</a></li>
+                  <li><a href="#">ContactUs</a></li>
+            
+                </u1>
+              </div>
+            
+            </section>
+            <br><br><br>
+          
+        <center>
+            {{ prediction }}
+        </center>
+        
+    </body>
+</html>
